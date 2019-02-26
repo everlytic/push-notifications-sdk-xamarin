@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+    <metadata>
+        <id>Com.Everlytic</id>
+        <version>0.0.1-alpha</version>
+        <title>Everlytic Push SDK for Xamarin</title>
+        <authors>Everlytic, Jason Dantuma</authors>
+        <owners>Everlytic</owners>
+        <!--<licenseUrl></licenseUrl>-->
+        <!--<projectUrl></projectUrl>-->
+        <!--<iconUrl></iconUrl>-->
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Everlytic Push for Xamarin</description>
+        <summary>This SDK makes it easy to incorporate Everlytic push notifications into your Xamarin apps.</summary>
+        <tags>Everlytic, xamarin, C#, push</tags>
+        <dependencies>
+            <group targetFramework="MonoAndroid9.0">
+                <dependency id="Karamunting.Kotlin.StdLib" version="[1.3.11]"/>
+                <dependency id="Karamunting.Kotlin.StdLib.Common" version="[1.3.11]"/>
+                <dependency id="Xamarin.Android.Support.v4" version="28.0.0"/>
+                <dependency id="Xamarin.Firebase.Messaging" version="70.1710.0-preview2"/>
+                <dependency id="Xamarin.GooglePlayServices.Base" version="70.1501.0-preview2"/>
+            </group>
+            <group targetFramework="MonoAndroid8.1">
+                <dependency id="Karamunting.Kotlin.StdLib" version="[1.3.11]"/>
+                <dependency id="Karamunting.Kotlin.StdLib.Common" version="[1.3.11]"/>
+                <dependency id="Xamarin.Android.Support.v4" version="[27.0.0, 28.0.0)"/>
+                <dependency id="Xamarin.Firebase.Messaging" version="70.1710.0-preview2"/>
+                <dependency id="Xamarin.GooglePlayServices.Base" version="70.1501.0-preview2"/>
+            </group>
+            <group targetFramework="MonoAndroid8.0">
+                <dependency id="Karamunting.Kotlin.StdLib" version="[1.3.11]"/>
+                <dependency id="Karamunting.Kotlin.StdLib.Common" version="[1.3.11]"/>
+                <dependency id="Xamarin.Android.Support.v4" version="[26.0.0, 28.0.0)"/>
+                <dependency id="Xamarin.Firebase.Messaging" version="70.1710.0-preview2"/>
+                <dependency id="Xamarin.GooglePlayServices.Base" version="70.1501.0-preview2"/>
+            </group>
+            <group targetFramework="MonoAndroid7.1">
+                <dependency id="Karamunting.Kotlin.StdLib" version="[1.3.11]"/>
+                <dependency id="Karamunting.Kotlin.StdLib.Common" version="[1.3.11]"/>
+                <dependency id="Xamarin.Android.Support.v4" version="[25.0.0, 28.0.0)"/>
+                <dependency id="Xamarin.Firebase.Messaging" version="70.1710.0-preview2"/>
+                <dependency id="Xamarin.GooglePlayServices.Base" version="70.1501.0-preview2"/>
+            </group>
+        </dependencies>
+    </metadata>
+    <files>
+        <!--Core-->
+        <file src="EverlyticPush\bin\Release\EverlyticPush.pdb" target="lib\netstandard1.0"/>
+        <file src="EverlyticPush\bin\Release\EverlyticPush.dll" target="lib\netstandard1.0"/>
+        <file src="EverlyticPush.Abstract\bin\Release\EverlyticPush.Abstract.pdb" target="lib\netstandard1.0"/>
+        <file src="EverlyticPush.Abstract\bin\Release\EverlyticPush.Abstract.dll" target="lib\netstandard1.0"/>
+
+        <!--Xamarin.Android-->
+        <file src="EverlyticPush.Android\bin\Release\*EverlyticPush.*" target="lib\MonoAndroid10"/>
+
+        <!--Xamarin.iOS Unified-->
+        <!--<file src="EverlyticPush.iOS\bin\Release\*EverlyticPush.*" target="lib\Xamarin.iOS10"/>-->
+    </files>
+</package>

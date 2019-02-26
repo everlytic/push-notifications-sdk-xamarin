@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" 
+          android:versionCode="1" 
+          android:versionName="1.0" 
+          package="EvPushSample.Android.EvPushSample.Android">
+  <uses-sdk android:minSdkVersion="21" android:targetSdkVersion="28" />
+  <application android:allowBackup="true" android:label="@string/app_name" android:supportsRtl="true" android:theme="@style/AppTheme">
+      <meta-data android:name="com.everlytic.api.API_USERNAME" android:value="jason"></meta-data>
+      <meta-data android:name="com.everlytic.api.API_KEY" android:value="4mw30eCcKrsY76QHgL58UlwbW164kAv0_0"></meta-data>
+      <meta-data android:name="com.everlytic.api.PUSH_NOTIFICATIONS_LIST_ID" android:value="4"></meta-data>
+      <meta-data android:name="com.everlytic.api.API_INSTALL_URL" android:value="qa.everlytic.net"></meta-data>
+  </application>
+</manifest>
