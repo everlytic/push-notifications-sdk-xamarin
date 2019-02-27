@@ -8,8 +8,15 @@
     <Button
             android:id="@+id/btn_subscribe"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="subscribe"
+    />
+	<Button
+            android:id="@+id/btn_unsubscribe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="unsubscribe"
+		android:layout_below="@id/btn_subscribe"
     />
     
 </RelativeLayout>

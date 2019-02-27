@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{657B
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvPushSample.Android", "EvPushSample.Android\EvPushSample.Android.csproj", "{6B0BA27E-1E87-436D-9371-6E736B998721}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverlyticPush.iOS", "EverlyticPush.iOS\EverlyticPush.iOS.csproj", "{1F5AC7D1-8D0D-472D-BC45-75805262771D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6B0BA27E-1E87-436D-9371-6E736B998721}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B0BA27E-1E87-436D-9371-6E736B998721}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B0BA27E-1E87-436D-9371-6E736B998721}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1F5AC7D1-8D0D-472D-BC45-75805262771D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F5AC7D1-8D0D-472D-BC45-75805262771D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F5AC7D1-8D0D-472D-BC45-75805262771D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F5AC7D1-8D0D-472D-BC45-75805262771D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6B0BA27E-1E87-436D-9371-6E736B998721} = {657B90A0-191C-4872-93A4-F7FD6E4F9A9F}
