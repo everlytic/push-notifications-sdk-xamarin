@@ -39,7 +39,7 @@ namespace EvPushSample.Android
                         {
                             RunOnUiThread(() =>
                             {
-                                if (result.isSuccessful)
+                                if (result.IsSuccessful)
                                 {
                                     new AlertDialog.Builder(this)
                                         .SetTitle("Success")
@@ -50,7 +50,7 @@ namespace EvPushSample.Android
                                 {
                                     new AlertDialog.Builder(this)
                                         .SetTitle("Failed")
-                                        .SetMessage(result.exception?.Message ?? "An unknown exception occurred")
+                                        .SetMessage(result.Exception?.Message ?? "An unknown exception occurred")
                                         .Show();
                                 }
                             });

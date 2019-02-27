@@ -39,6 +39,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Delegates.cs" />
+        <Compile Include="EverlyticNotification.cs" />
         <Compile Include="EvResult.cs" />
         <Compile Include="IEverlyticPush.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />

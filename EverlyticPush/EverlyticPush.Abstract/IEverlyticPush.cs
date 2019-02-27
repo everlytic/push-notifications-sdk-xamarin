@@ -1,4 +1,7 @@
-﻿namespace EverlyticPush.Abstract
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
+
+namespace EverlyticPush.Abstract
 {
     public interface IEverlyticPush
     {        
@@ -9,5 +12,6 @@
         void Unsubscribe(OnResultReceived onResultReceivedDelegate);
         bool IsContactSubscribed();
         bool IsInitialized();
+        void GetNotificationHistory(OnNotificationHistoryResults onNotificationHistoryResultsDelegate);
     }
 }

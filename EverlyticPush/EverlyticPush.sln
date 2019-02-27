@@ -14,6 +14,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvPushSample.Android", "EvP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverlyticPush.iOS", "EverlyticPush.iOS\EverlyticPush.iOS.csproj", "{1F5AC7D1-8D0D-472D-BC45-75805262771D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EvPushSample.iOS", "EvPushSample.iOS\EvPushSample.iOS.csproj", "{C75AB8E1-D82F-4A84-B2C1-ABC001944358}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,8 +47,13 @@ Global
 		{1F5AC7D1-8D0D-472D-BC45-75805262771D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F5AC7D1-8D0D-472D-BC45-75805262771D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F5AC7D1-8D0D-472D-BC45-75805262771D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C75AB8E1-D82F-4A84-B2C1-ABC001944358}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
+		{C75AB8E1-D82F-4A84-B2C1-ABC001944358}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
+		{C75AB8E1-D82F-4A84-B2C1-ABC001944358}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
+		{C75AB8E1-D82F-4A84-B2C1-ABC001944358}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6B0BA27E-1E87-436D-9371-6E736B998721} = {657B90A0-191C-4872-93A4-F7FD6E4F9A9F}
+		{C75AB8E1-D82F-4A84-B2C1-ABC001944358} = {657B90A0-191C-4872-93A4-F7FD6E4F9A9F}
 	EndGlobalSection
 EndGlobal

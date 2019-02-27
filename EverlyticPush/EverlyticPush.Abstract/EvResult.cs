@@ -4,7 +4,7 @@ namespace EverlyticPush.Abstract
 {
     public class EvResult
     {
-        public bool isSuccessful;
-        public Exception exception;
+        public bool IsSuccessful;
+        public Exception Exception;
     }
 }

@@ -38,5 +38,10 @@ namespace EverlyticPush
         {
             throw new System.NotImplementedException();
         }
+
+        public void GetNotificationHistory(OnNotificationHistoryResults onNotificationHistoryResultsDelegate)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
