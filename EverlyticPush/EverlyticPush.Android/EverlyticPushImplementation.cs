@@ -26,9 +26,9 @@ namespace EverlyticPush
             Com.Everlytic.Android.EverlyticPush.Subscribe(email);
         }
 
-        public void Subscribe(string email, OnResultReceived onResultReceivedDelegate)
+        public void Subscribe(string email, OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
-            var resultReceiver = new ResultReceiver(onResultReceivedDelegate);
+            var resultReceiver = new ResultReceiver(onResultReceivedDelegateDelegate);
             Com.Everlytic.Android.EverlyticPush.Subscribe(email, resultReceiver);
         }
 
@@ -37,9 +37,9 @@ namespace EverlyticPush
             Com.Everlytic.Android.EverlyticPush.Unsubscribe(null);
         }
 
-        public void Unsubscribe(OnResultReceived onResultReceivedDelegate)
+        public void Unsubscribe(OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
-            var resultReceiver = new ResultReceiver(onResultReceivedDelegate);
+            var resultReceiver = new ResultReceiver(onResultReceivedDelegateDelegate);
             Com.Everlytic.Android.EverlyticPush.Unsubscribe(resultReceiver);
         }
 
@@ -53,23 +53,23 @@ namespace EverlyticPush
             return Com.Everlytic.Android.EverlyticPush.IsInitialised;
         }
 
-        public void GetNotificationHistory(OnNotificationHistoryResults onNotificationHistoryResultsDelegate)
+        public void GetNotificationHistory(OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate)
         {
-            var historyReceiver = new NotificationHistoryReceiver(onNotificationHistoryResultsDelegate);
+            var historyReceiver = new NotificationHistoryReceiver(onNotificationHistoryResultsDelegateDelegate);
             Com.Everlytic.Android.EverlyticPush.GetNotificationHistory(historyReceiver);
         }
     }
 
     internal class ResultReceiver : Java.Lang.Object, IOnResultReceiver
     {
-        private readonly OnResultReceived _delegate;
+        private readonly OnResultReceivedDelegate _delegate;
 
         // ReSharper disable once UnusedMember.Global
         public ResultReceiver()
         {
         }
 
-        public ResultReceiver(OnResultReceived _delegate)
+        public ResultReceiver(OnResultReceivedDelegate _delegate)
         {
             this._delegate = _delegate;
         }
@@ -87,13 +87,13 @@ namespace EverlyticPush
 
     internal class NotificationHistoryReceiver : Java.Lang.Object, IOnNotificationHistoryResultListener
     {
-        private readonly OnNotificationHistoryResults _delegate;
+        private readonly OnNotificationHistoryResultsDelegate _delegate;
         
         public NotificationHistoryReceiver()
         {
         }
 
-        public NotificationHistoryReceiver(OnNotificationHistoryResults _delegate)
+        public NotificationHistoryReceiver(OnNotificationHistoryResultsDelegate _delegate)
         {
             this._delegate = _delegate;
         }

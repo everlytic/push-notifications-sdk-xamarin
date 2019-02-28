@@ -14,7 +14,7 @@ namespace EverlyticPush
             throw new System.NotImplementedException();
         }
 
-        public void Subscribe(string email, OnResultReceived onResultReceivedDelegate)
+        public void Subscribe(string email, OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
             throw new System.NotImplementedException();
         }
@@ -24,7 +24,7 @@ namespace EverlyticPush
             throw new System.NotImplementedException();
         }
 
-        public void Unsubscribe(OnResultReceived onResultReceivedDelegate)
+        public void Unsubscribe(OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
             throw new System.NotImplementedException();
         }
@@ -39,7 +39,7 @@ namespace EverlyticPush
             throw new System.NotImplementedException();
         }
 
-        public void GetNotificationHistory(OnNotificationHistoryResults onNotificationHistoryResultsDelegate)
+        public void GetNotificationHistory(OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate)
         {
             throw new System.NotImplementedException();
         }

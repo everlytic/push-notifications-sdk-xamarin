@@ -3,7 +3,7 @@ using System.Collections.ObjectModel;
 
 namespace EverlyticPush.Abstract
 {
-    public delegate void OnResultReceived(EvResult result);
+    public delegate void OnResultReceivedDelegate(EvResult result);
     
-    public delegate void OnNotificationHistoryResults(List<EverlyticNotification> notifications);
+    public delegate void OnNotificationHistoryResultsDelegate(List<EverlyticNotification> notifications);
 }

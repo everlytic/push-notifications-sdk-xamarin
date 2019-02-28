@@ -1,17 +1,14 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-
-namespace EverlyticPush.Abstract
+﻿namespace EverlyticPush.Abstract
 {
     public interface IEverlyticPush
     {        
         void Initialize();
         void Subscribe(string email);
-        void Subscribe(string email, OnResultReceived onResultReceivedDelegate);
+        void Subscribe(string email, OnResultReceivedDelegate onResultReceivedDelegateDelegate);
         void Unsubscribe();
-        void Unsubscribe(OnResultReceived onResultReceivedDelegate);
+        void Unsubscribe(OnResultReceivedDelegate onResultReceivedDelegateDelegate);
         bool IsContactSubscribed();
         bool IsInitialized();
-        void GetNotificationHistory(OnNotificationHistoryResults onNotificationHistoryResultsDelegate);
+        void GetNotificationHistory(OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate);
     }
 }
