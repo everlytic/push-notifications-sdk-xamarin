@@ -1,16 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using Android.App;
 using Com.Everlytic.Android;
-using Com.Everlytic.Android.Pushnotificationsdk.Models;
 using EverlyticPush.Abstract;
 using Java.Util;
 using AndroidEvResult = Com.Everlytic.Android.EvResult;
 using AndroidEverlyticNotification = Com.Everlytic.Android.Pushnotificationsdk.Models.EverlyticNotification;
-using EverlyticNotification = EverlyticPush.Abstract.EverlyticNotification;
 using EvResult = EverlyticPush.Abstract.EvResult;
+using Object = Java.Lang.Object;
 
 namespace EverlyticPush
 {
@@ -53,14 +51,15 @@ namespace EverlyticPush
             return Com.Everlytic.Android.EverlyticPush.IsInitialised;
         }
 
-        public void GetNotificationHistory(OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate)
+        public void GetNotificationHistory(
+            OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate)
         {
             var historyReceiver = new NotificationHistoryReceiver(onNotificationHistoryResultsDelegateDelegate);
             Com.Everlytic.Android.EverlyticPush.GetNotificationHistory(historyReceiver);
         }
     }
 
-    internal class ResultReceiver : Java.Lang.Object, IOnResultReceiver
+    internal class ResultReceiver : Object, IOnResultReceiver
     {
         private readonly OnResultReceivedDelegate _delegate;
 
@@ -85,10 +84,10 @@ namespace EverlyticPush
         }
     }
 
-    internal class NotificationHistoryReceiver : Java.Lang.Object, IOnNotificationHistoryResultListener
+    internal class NotificationHistoryReceiver : Object, IOnNotificationHistoryResultListener
     {
         private readonly OnNotificationHistoryResultsDelegate _delegate;
-        
+
         public NotificationHistoryReceiver()
         {
         }
@@ -109,7 +108,7 @@ namespace EverlyticPush
                 ReadAt = fromJavaDate(notification.Read_at),
                 DismissedAt = fromJavaDate(notification.Dismissed_at)
             }).ToList();
-            
+
             _delegate.Invoke(results);
         }
 

@@ -14,7 +14,7 @@ namespace EvPushSample.Android
         public override void OnCreate()
         {
             base.OnCreate();
-            
+
             EverlyticPush.EverlyticPush.Current.Initialize();
         }
     }

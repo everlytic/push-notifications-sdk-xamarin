@@ -1,7 +1,7 @@
 ﻿namespace EverlyticPush.Abstract
 {
     public interface IEverlyticPush
-    {        
+    {
         void Initialize();
         void Subscribe(string email);
         void Subscribe(string email, OnResultReceivedDelegate onResultReceivedDelegateDelegate);

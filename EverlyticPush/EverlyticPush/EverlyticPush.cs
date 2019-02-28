@@ -5,22 +5,19 @@ namespace EverlyticPush
 {
     public class EverlyticPush
     {
-        static readonly Lazy<IEverlyticPush> Implementation = new Lazy<IEverlyticPush>(CreateInstance);
+        private static readonly Lazy<IEverlyticPush> Implementation = new Lazy<IEverlyticPush>(CreateInstance);
 
         public static IEverlyticPush Current
         {
             get
             {
-                if (Implementation.Value == null)
-                {
-                    throw NotImplementedInAssemblyException();
-                }
+                if (Implementation.Value == null) throw NotImplementedInAssemblyException();
 
                 return Implementation.Value;
             }
         }
 
-        static IEverlyticPush CreateInstance()
+        private static IEverlyticPush CreateInstance()
         {
             return new EverlyticPushImplementation();
         }

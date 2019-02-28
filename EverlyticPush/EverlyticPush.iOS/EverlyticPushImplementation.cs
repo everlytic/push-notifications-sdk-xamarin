@@ -1,4 +1,5 @@
-﻿using EverlyticPush.Abstract;
+﻿using System;
+using EverlyticPush.Abstract;
 
 namespace EverlyticPush
 {
@@ -6,42 +7,43 @@ namespace EverlyticPush
     {
         public void Initialize()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Subscribe(string email)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Subscribe(string email, OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Unsubscribe()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public void Unsubscribe(OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public bool IsContactSubscribed()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public bool IsInitialized()
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public void GetNotificationHistory(OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate)
+        public void GetNotificationHistory(
+            OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
     }
 }

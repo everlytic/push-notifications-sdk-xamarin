@@ -3,8 +3,8 @@ using Android.App;
 using Android.OS;
 using Android.Support.V7.App;
 using Android.Text;
-using Android.Widget;
 using Android.Util;
+using Android.Widget;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
 
 namespace EvPushSample.Android
@@ -40,19 +40,15 @@ namespace EvPushSample.Android
                             RunOnUiThread(() =>
                             {
                                 if (result.IsSuccessful)
-                                {
                                     new AlertDialog.Builder(this)
                                         .SetTitle("Success")
                                         .SetMessage("Subscription was successful")
                                         .Show();
-                                }
                                 else
-                                {
                                     new AlertDialog.Builder(this)
                                         .SetTitle("Failed")
                                         .SetMessage(result.Exception?.Message ?? "An unknown exception occurred")
                                         .Show();
-                                }
                             });
                         }
                         catch (Exception e)
