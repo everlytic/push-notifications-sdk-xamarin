@@ -1,0 +1,8 @@
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: true
+include:
+  - QUICK_REFERENCE.md
+  - TEST_SCRIPT.md
