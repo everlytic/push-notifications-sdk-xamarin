@@ -1,6 +1,8 @@
 ## Testing SDK without Everlytic
 
-Simple testing without needing to send messages through the product
+Simple testing without needing to send messages through the product.
+
+Add your service account .json file as a `auth.json` file.
 
 #### `package.json`
 ```json

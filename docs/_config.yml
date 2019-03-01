@@ -4,6 +4,7 @@ relative_links:
   enabled: true
   collections: true
 include:
-  - QUICK_REFERENCE.md
-  - TEST_SCRIPT.md
+  - readme.md
+  - quick_reference.md
+  - test_script.md
 theme: jekyll-theme-cayman
