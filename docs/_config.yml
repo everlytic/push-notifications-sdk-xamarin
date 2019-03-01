@@ -6,3 +6,4 @@ relative_links:
 include:
   - QUICK_REFERENCE.md
   - TEST_SCRIPT.md
+theme: jekyll-theme-tactile
