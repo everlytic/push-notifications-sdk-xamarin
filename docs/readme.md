@@ -2,8 +2,8 @@
 
 Currently this SDK only supports Android apps.
 
-[Quick Reference](/quick_reference.html)
-[Test Script](/test_script.html)
+[Quick Reference](/push-notifications-sdk-xamarin/quick_reference.html)  
+[Test Script](/push-notifications-sdk-xamarin/test_script.html)
 
 ### Getting Started
 
