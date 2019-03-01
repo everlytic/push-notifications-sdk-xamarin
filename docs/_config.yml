@@ -1,3 +1,4 @@
+name: Everlytic Push Notifications Xamarin SDK
 plugins:
   - jekyll-relative-links
 relative_links:
