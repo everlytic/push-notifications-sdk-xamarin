@@ -1,11 +1,11 @@
-## Everlytic Push Notification SDK for Xamarin
+# Everlytic Push Notification SDK for Xamarin
 
 Currently this SDK only supports Android apps.
 
 [Quick Reference](/push-notifications-sdk-xamarin/quick_reference.html)  
 [Test Script](/push-notifications-sdk-xamarin/test_script.html)
 
-### Getting Started
+## Getting Started
 
 Add the following to your `AndroidManifest.xml` file, replacing `{}` fields with the appropriate values.
 
@@ -26,7 +26,7 @@ Add the following to your `AndroidManifest.xml` file, replacing `{}` fields with
 Initialize the SDK in your top level Application class
 
 
-#### Xamarin.Forms
+### Xamarin.Forms
 
 ```c#
 
@@ -45,7 +45,7 @@ public class App : Application
 
 ```
 
-#### Android
+### Android
 
 ```c#
 [Application]
@@ -64,7 +64,8 @@ public class App : Application
     }
 }
 ```
-
+***
+## Using the SDK
 ### Subscribing a Contact
 
 ```c#
@@ -110,7 +111,7 @@ public void UnsubscribeContact()
 }
 ```
 
-## Basic Customization
+### Basic Customization
 
 - Change the default icon by adding a `ic_ev_notification_small` drawable
 - Change the default color by updating the `styles.xml` `colorPrimary` property 
