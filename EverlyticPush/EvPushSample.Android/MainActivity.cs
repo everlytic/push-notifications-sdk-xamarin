@@ -19,6 +19,7 @@ namespace EvPushSample.Android
             SetContentView(Resource.Layout.activity_main);
 
             FindViewById<Button>(Resource.Id.btn_subscribe).Click += OnSubscribeClicked;
+            FindViewById<Button>(Resource.Id.btn_unsubscribe).Click += OnUnsubscribeClicked;
         }
 
         private void OnSubscribeClicked(object sender, EventArgs eventArgs)
@@ -40,10 +41,12 @@ namespace EvPushSample.Android
                             RunOnUiThread(() =>
                             {
                                 if (result.IsSuccessful)
+                                {
                                     new AlertDialog.Builder(this)
                                         .SetTitle("Success")
                                         .SetMessage("Subscription was successful")
                                         .Show();
+                                }
                                 else
                                     new AlertDialog.Builder(this)
                                         .SetTitle("Failed")
@@ -57,6 +60,33 @@ namespace EvPushSample.Android
                         }
                     });
                 })
+                .Show();
+        }
+
+        private void OnUnsubscribeClicked(object sender, EventArgs eventArgs)
+        {
+            new AlertDialog.Builder(this)
+                .SetTitle("Unsubscribe")
+                .SetMessage("Unsucscribe the current contact?")
+                .SetPositiveButton("Unsubscribe",
+                    (o, args) =>
+                    {
+                        EverlyticPush.EverlyticPush.Current.Unsubscribe(result =>
+                        {
+                            RunOnUiThread(() =>
+                            {
+                                if (result.IsSuccessful)
+                                {
+                                    Toast.MakeText(this, "success", ToastLength.Long).Show();
+                                }
+                                else
+                                {
+                                    Toast.MakeText(this, result.Exception?.Message ?? "Unknown error", ToastLength.Long)
+                                        .Show();
+                                }
+                            });
+                        });
+                    })
                 .Show();
         }
     }
