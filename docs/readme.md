@@ -66,6 +66,9 @@ public class App : Application
         base.OnCreate();
 
         // Initialize the Everlytic SDK
+        EverlyticPush.EverlyticPush.Current.Initialize();
+            
+        // Initialize the Everlytic SDK with Testing mode enabled
         EverlyticPush.EverlyticPush.Current
             .SetTestMode(true)
             .Initialize();
