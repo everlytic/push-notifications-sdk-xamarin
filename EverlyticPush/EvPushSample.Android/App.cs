@@ -15,7 +15,9 @@ namespace EvPushSample.Android
         {
             base.OnCreate();
 
-            EverlyticPush.EverlyticPush.Current.Initialize();
+            EverlyticPush.EverlyticPush.Current
+                .SetTestMode(true)
+                .Initialize();
         }
     }
 }

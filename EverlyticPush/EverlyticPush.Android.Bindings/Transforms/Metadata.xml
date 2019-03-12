@@ -8,4 +8,13 @@
   -->
 
   <attr path="/api/package[@name='com.everlytic.android.pushnotificationsdk']" name="managedName">Com.Everlytic.Android</attr>
+  <attr path="/api/package[@name='com.everlytic.android.pushnotificationsdk']/class[@name='PushSdk']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.everlytic.android.pushnotificationsdk']/class[@name='SdkSettings']" name="visibility">private</attr>
+  <attr path="/api/package[@name='com.everlytic.android.pushnotificationsdk']/class[@name='EvBootReceiver']" name="visibility">private</attr>
+  <remove-node path="/api/package[@name='com.everlytic.android.pushnotificationsdk.database']" />
+  <remove-node path="/api/package[@name='com.everlytic.android.pushnotificationsdk.facades']" />
+  <remove-node path="/api/package[@name='com.everlytic.android.pushnotificationsdk.handlers']" />
+  <remove-node path="/api/package[@name='com.everlytic.android.pushnotificationsdk.network']" />
+  <remove-node path="/api/package[@name='com.everlytic.android.pushnotificationsdk.repositories']" />
+  <remove-node path="/api/package[@name='com.everlytic.android.pushnotificationsdk.workers']" />
 </metadata>

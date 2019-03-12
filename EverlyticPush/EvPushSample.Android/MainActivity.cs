@@ -67,7 +67,7 @@ namespace EvPushSample.Android
         {
             new AlertDialog.Builder(this)
                 .SetTitle("Unsubscribe")
-                .SetMessage("Unsucscribe the current contact?")
+                .SetMessage("Unsubscribe the current contact?")
                 .SetPositiveButton("Unsubscribe",
                     (o, args) =>
                     {

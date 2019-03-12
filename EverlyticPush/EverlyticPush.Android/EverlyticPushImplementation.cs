@@ -57,6 +57,12 @@ namespace EverlyticPush
             var historyReceiver = new NotificationHistoryReceiver(onNotificationHistoryResultsDelegateDelegate);
             Com.Everlytic.Android.EverlyticPush.GetNotificationHistory(historyReceiver);
         }
+
+        public IEverlyticPush SetTestMode(bool mode)
+        {
+            Com.Everlytic.Android.EverlyticPush.SetInTestMode(mode);
+            return this;
+        }
     }
 
     internal class ResultReceiver : Object, IOnResultReceiver

@@ -1,5 +1,6 @@
 ﻿using System;
 using EverlyticPush.Abstract;
+using Foundation;
 
 namespace EverlyticPush
 {
@@ -42,6 +43,11 @@ namespace EverlyticPush
 
         public void GetNotificationHistory(
             OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEverlyticPush SetTestMode(bool mode)
         {
             throw new NotImplementedException();
         }
