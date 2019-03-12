@@ -1,5 +1,11 @@
-#### [Quick Reference](/push-notifications-sdk-xamarin/quick_reference.html)  
-#### [Test Script](/push-notifications-sdk-xamarin/test_script.html)
+- [Quick Reference](/push-notifications-sdk-xamarin/quick_reference.html)
+- [Change Log](/push-notifications-sdk-xamarin/changelog.html)
+- [Test Scripts](/push-notifications-sdk-xamarin/test_script.html)
+
+## Notes
+
+- iOS is currently not implemented. Called methods will throw `NotImplementedException` when run on an iOS device.
+- A Test mode is provided during the alpha phase. This mocks HTTP requests to the Everlytic API for basic testing.
 
 ## Getting Started
 
@@ -21,7 +27,6 @@ Add the following to your `AndroidManifest.xml` file, replacing `{}` fields with
 
 Initialize the SDK in your top level Application class
 
-
 ### Xamarin.Forms
 
 ```c#
@@ -36,6 +41,11 @@ public class App : Application
         
         // Initialize the Everlytic SDK
         EverlyticPush.EverlyticPush.Current.Initialize();
+        
+        // Initialize the Everlytic SDK with Testing mode enabled
+        EverlyticPush.EverlyticPush.Current
+            .SetTestMode(true)
+            .Initialize();
     }
 }
 
@@ -56,7 +66,9 @@ public class App : Application
         base.OnCreate();
 
         // Initialize the Everlytic SDK
-        EverlyticPush.EverlyticPush.Current.Initialize();
+        EverlyticPush.EverlyticPush.Current
+            .SetTestMode(true)
+            .Initialize();
     }
 }
 ```
