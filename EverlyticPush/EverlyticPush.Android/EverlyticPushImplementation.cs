@@ -81,10 +81,8 @@ namespace Com.EverlyticPush
 
         public void OnResult(AndroidEvResult evResult)
         {
-            var abstractEvResult = new EvResult();
+            var abstractEvResult = new EvResult {IsSuccessful = evResult.IsSuccessful, Exception = evResult.Exception};
 
-            abstractEvResult.IsSuccessful = evResult.IsSuccessful;
-            abstractEvResult.Exception = evResult.Exception;
 
             _delegate.Invoke(abstractEvResult);
         }
@@ -110,15 +108,15 @@ namespace Com.EverlyticPush
                 MessageId = notification.MessageId,
                 Title = notification.Title,
                 Body = notification.Body,
-                ReceivedAt = fromJavaDate(notification.Received_at),
-                ReadAt = fromJavaDate(notification.Read_at),
-                DismissedAt = fromJavaDate(notification.Dismissed_at)
+                ReceivedAt = FromJavaDate(notification.Received_at),
+                ReadAt = FromJavaDate(notification.Read_at),
+                DismissedAt = FromJavaDate(notification.Dismissed_at)
             }).ToList();
 
             _delegate.Invoke(results);
         }
 
-        private DateTime fromJavaDate(Date date)
+        private static DateTime FromJavaDate(Date date)
         {
             return DateTimeOffset.FromUnixTimeMilliseconds(date.Time).Date;
         }

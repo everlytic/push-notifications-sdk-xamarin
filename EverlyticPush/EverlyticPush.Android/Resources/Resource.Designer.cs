@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("EverlyticPush.Resource", IsApplication=false)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("Com.EverlyticPush.Android.Resource", IsApplication=false)]
 
-namespace EverlyticPush
+namespace Com.EverlyticPush.Android
 {
 	
 	
