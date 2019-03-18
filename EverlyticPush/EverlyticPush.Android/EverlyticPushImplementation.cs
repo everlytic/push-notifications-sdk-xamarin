@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using Android.App;
 using Com.Everlytic.Android;
-using EverlyticPush.Abstract;
+using Com.EverlyticPush.Abstract;
 using Java.Util;
 using AndroidEvResult = Com.Everlytic.Android.EvResult;
 using AndroidEverlyticNotification = Com.Everlytic.Android.Pushnotificationsdk.Models.EverlyticNotification;
-using EvResult = EverlyticPush.Abstract.EvResult;
+using EvResult = Com.EverlyticPush.Abstract.EvResult;
 using Object = Java.Lang.Object;
 
-namespace EverlyticPush
+namespace Com.EverlyticPush
 {
     public class EverlyticPushImplementation : IEverlyticPush
     {

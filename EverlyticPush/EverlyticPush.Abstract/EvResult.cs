@@ -1,6 +1,6 @@
 using System;
 
-namespace EverlyticPush.Abstract
+namespace Com.EverlyticPush.Abstract
 {
     public class EvResult
     {

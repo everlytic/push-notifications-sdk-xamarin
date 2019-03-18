@@ -1,4 +1,4 @@
-- [Quick Reference](/push-notifications-sdk-xamarin/quick_reference.html)
+- [SDK Reference](/push-notifications-sdk-xamarin/quick_reference.html)
 - [Change Log](/push-notifications-sdk-xamarin/changelog.html)
 - [Test Scripts](/push-notifications-sdk-xamarin/test_script.html)
 
@@ -31,6 +31,8 @@ Initialize the SDK in your top level Application class
 
 ```c#
 
+using Com.EverlyticPush;
+
 public class App : Application
 {
     public App()
@@ -40,10 +42,10 @@ public class App : Application
         MainPage = new MainPage();
         
         // Initialize the Everlytic SDK
-        EverlyticPush.EverlyticPush.Current.Initialize();
+        Everlytic.Instance.Initialize();
         
         // Initialize the Everlytic SDK with Testing mode enabled
-        EverlyticPush.EverlyticPush.Current
+        Everlytic.Instance
             .SetTestMode(true)
             .Initialize();
     }
@@ -54,6 +56,9 @@ public class App : Application
 ### Android
 
 ```c#
+
+using Com.EverlyticPush;
+
 [Application]
 public class App : Application
 {
@@ -66,10 +71,10 @@ public class App : Application
         base.OnCreate();
 
         // Initialize the Everlytic SDK
-        EverlyticPush.EverlyticPush.Current.Initialize();
+        Everlytic.Instance.Initialize();
             
         // Initialize the Everlytic SDK with Testing mode enabled
-        EverlyticPush.EverlyticPush.Current
+        Everlytic.Instance
             .SetTestMode(true)
             .Initialize();
     }
@@ -83,10 +88,10 @@ public class App : Application
 public void SubscribeContact(string email) 
 {
     // If you don't require a success or fail result
-    EverlyticPush.EverlyticPush.Current.Subscribe(email);
+    Everlytic.Instance.Subscribe(email);
     
     // If you want to get the success or failure result of the subscription call
-    EverlyticPush.EverlyticPush.Current.Subscribe(email, result => 
+    Everlytic.Instance.Subscribe(email, result => 
     {
         // Handle the result. Note this does not return on the main thread
     });
@@ -100,10 +105,10 @@ public void UnsubscribeContact()
 {
     // If you don't require a success or fail result. 
     // Unsubscribes the current contact
-    EverlyticPush.EverlyticPush.Current.Unsubscribe();
+    Everlytic.Instance.Unsubscribe();
     
     // If you want to get the success or failure result of the subscription call
-    EverlyticPush.EverlyticPush.Current.Unsubscribe(result => 
+    Everlytic.Instance.Unsubscribe(result => 
     {
         // Handle the result. Note this does not return on the main thread
     });
@@ -113,9 +118,9 @@ public void UnsubscribeContact()
 ### Retrieve the Notification History
 
 ```c#
-public void UnsubscribeContact() 
+public void GetNotificationHistory() 
 {   
-    EverlyticPush.EverlyticPush.Current.GetNotificationHistory(resultSet => 
+    Everlytic.Instance.GetNotificationHistory(resultSet => 
     {
         // Handle the result set
     });

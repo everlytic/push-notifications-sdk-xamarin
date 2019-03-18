@@ -8,7 +8,7 @@
         <owners>Everlytic</owners>
         <!--<licenseUrl></licenseUrl>-->
         <!--<projectUrl></projectUrl>-->
-        <!--<iconUrl></iconUrl>-->
+        <iconUrl>https://secure.gravatar.com/avatar/8cc4b70c001cb840097f9299f0207328</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>Everlytic Push for Xamarin</description>
         <summary>This SDK makes it easy to incorporate Everlytic push notifications into your Xamarin apps.</summary>

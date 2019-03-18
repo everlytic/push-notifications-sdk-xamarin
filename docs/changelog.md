@@ -1,5 +1,12 @@
 # Change Log
 
+## `0.0.3-alpha`
+- Renamed root namespace to `Com.EverlyticPush`
+- Renamed static instance class to `Everlytic.Instance`
+- Update to Android SDK `0.0.3-alpha`
+  - Fix crash when retrieving the notification history
+  - Clear the notification history on contact unsubscribe
+
 ## `0.0.2-alpha`
 
 - Updated versioning scheme to follow NuGet conventions

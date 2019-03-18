@@ -1,8 +1,8 @@
 ﻿using System;
-using EverlyticPush.Abstract;
+using Com.EverlyticPush.Abstract;
 using Foundation;
 
-namespace EverlyticPush
+namespace Com.EverlyticPush
 {
     public class EverlyticPushImplementation : IEverlyticPush
     {

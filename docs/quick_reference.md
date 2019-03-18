@@ -2,6 +2,8 @@ All methods are accessible on the `EverlyticPush.EverlyticPush.Current` object. 
 
 ## Available Methods
 
+All methods are available on the `Everlytic.Instance` static class
+
 ```c#
 void Initialize()
 ```

@@ -1,13 +1,13 @@
 ﻿using System;
-using EverlyticPush.Abstract;
+using Com.EverlyticPush.Abstract;
 
-namespace EverlyticPush
+namespace Com.EverlyticPush
 {
-    public class EverlyticPush
+    public class Everlytic
     {
         private static readonly Lazy<IEverlyticPush> Implementation = new Lazy<IEverlyticPush>(CreateInstance);
 
-        public static IEverlyticPush Current
+        public static IEverlyticPush Instance
         {
             get
             {

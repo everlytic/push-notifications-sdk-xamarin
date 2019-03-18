@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace EverlyticPush.Abstract
+namespace Com.EverlyticPush.Abstract
 {
     public delegate void OnResultReceivedDelegate(EvResult result);
 

@@ -6,6 +6,7 @@ using Android.Text;
 using Android.Util;
 using Android.Widget;
 using AlertDialog = Android.Support.V7.App.AlertDialog;
+using Com.EverlyticPush;
 
 namespace EvPushSample.Android
 {
@@ -34,7 +35,7 @@ namespace EvPushSample.Android
                 .SetView(et)
                 .SetPositiveButton("Subscribe", (a, b) =>
                 {
-                    EverlyticPush.EverlyticPush.Current.Subscribe(et.Text, result =>
+                    Everlytic.Instance.Subscribe(et.Text, result =>
                     {
                         try
                         {
@@ -71,7 +72,7 @@ namespace EvPushSample.Android
                 .SetPositiveButton("Unsubscribe",
                     (o, args) =>
                     {
-                        EverlyticPush.EverlyticPush.Current.Unsubscribe(result =>
+                        Everlytic.Instance.Unsubscribe(result =>
                         {
                             RunOnUiThread(() =>
                             {

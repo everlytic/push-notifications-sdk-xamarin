@@ -1,6 +1,7 @@
 using System;
 using Android.App;
 using Android.Runtime;
+using Com.EverlyticPush;
 
 namespace EvPushSample.Android
 {
@@ -15,7 +16,7 @@ namespace EvPushSample.Android
         {
             base.OnCreate();
 
-            EverlyticPush.EverlyticPush.Current
+            Everlytic.Instance
                 .SetTestMode(true)
                 .Initialize();
         }

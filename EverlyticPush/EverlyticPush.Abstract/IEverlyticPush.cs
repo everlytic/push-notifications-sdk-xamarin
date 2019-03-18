@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 
-namespace EverlyticPush.Abstract
+namespace Com.EverlyticPush.Abstract
 {
     [SuppressMessage("ReSharper", "UnusedMember.Global")]
     public interface IEverlyticPush
