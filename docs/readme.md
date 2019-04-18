@@ -1,6 +1,7 @@
-- [SDK Reference](/push-notifications-sdk-xamarin/quick_reference.html)
-- [Change Log](/push-notifications-sdk-xamarin/changelog.html)
-- [Test Scripts](/push-notifications-sdk-xamarin/test_script.html)
+- [SDK Reference](./quick_reference.html)
+- [Everlytic Push List Setup](./list_setup.html)
+- [Change Log](./changelog.html)
+- [Test Scripts](./test_script.html)
 
 ## Notes
 
