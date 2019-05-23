@@ -10,23 +10,17 @@
 
 ## Getting Started
 
-Add the following to your `AndroidManifest.xml` file, replacing `{}` fields with the appropriate values.
+- Add the following to your `AndroidManifest.xml` file, replacing `{config}` field with the SDK Configuration string.
+    ```xml
+    <application>
+      <meta-data android:name="com.everlytic.api.SDK_CONFIGURATION" android:value="{config}"></meta-data>
+    </application>
+    ```
+    _Your SDK Configuration string can obtained from your Push Projects page in Everlytic_
+- [Add your Firebase `google-services.json` file in your project](https://firebase.google.com/docs/android/setup?authuser=0#add-config-file)
 
-- `{api_username}` - Everlytic username for the API user
-- `{api_key}` - API key for the API user
-- `{list_id}` - Push Notification list ID the app will subscribe to
-- `{install_url}` - URL to your Everlytic install
 
-```xml
-<application>
-  <meta-data android:name="com.everlytic.api.API_USERNAME" android:value="{api_username}"></meta-data>
-  <meta-data android:name="com.everlytic.api.API_KEY" android:value="{api_key}"></meta-data>
-  <meta-data android:name="com.everlytic.api.PUSH_NOTIFICATIONS_LIST_ID" android:value="{list_id}"></meta-data>
-  <meta-data android:name="com.everlytic.api.API_INSTALL_URL" android:value="{install_url}"></meta-data>
-</application>
-```
-
-Initialize the SDK in your top level Application class
+## Initialize the SDK in your top level Application class
 
 ### Xamarin.Forms
 

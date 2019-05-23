@@ -38,14 +38,11 @@ Asynchronously retrieves the notification history for the device and returns the
 
 ## Android Set Up
 
-Add the following to your `AndroidManifest.xml` file inside the `<application>` tag. Replace values in `{}` with your appropriate values.
+Add the following to your `AndroidManifest.xml` file inside the `<application>` tag. replacing `{config}` field with the SDK Configuration string.
 
 ```xml
 <application>
-  <meta-data android:name="com.everlytic.api.API_USERNAME" android:value="{api_username}"></meta-data>
-  <meta-data android:name="com.everlytic.api.API_KEY" android:value="{api_key}"></meta-data>
-  <meta-data android:name="com.everlytic.api.PUSH_NOTIFICATIONS_LIST_ID" android:value="{list_id}"></meta-data>
-  <meta-data android:name="com.everlytic.api.API_INSTALL_URL" android:value="{install_url}"></meta-data>
+  <meta-data android:name="com.everlytic.api.SDK_CONFIGURATION" android:value="{config}"></meta-data>
 </application>
 ```
 
@@ -55,4 +52,3 @@ Notification color is derived from the `styles.xml` `colorPrimary` value
 ## Known Issues
 
 - The app may crash if there is a network connection issue, E.g. Everlytic domain cannot be resolved
-- `Unsubscribe()` may cause an app crash

@@ -1,5 +1,14 @@
 # Change Log
 
+## `0.0.4-alpha`
+- Android 
+    - Custom Actions and Parameters
+    - Open URL on notification
+    - Open app with custom parameters
+        - Fix message ID in notification events
+        - Restore unactioned notifications on boot
+        - Simplify SDK Configuration setup
+
 ## `0.0.3-alpha`
 - Renamed root namespace to `Com.EverlyticPush`
 - Renamed static instance class to `Everlytic.Instance`
