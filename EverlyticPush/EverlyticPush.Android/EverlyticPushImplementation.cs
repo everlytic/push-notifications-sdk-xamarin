@@ -19,6 +19,11 @@ namespace Com.EverlyticPush
             Com.Everlytic.Android.EverlyticPush.Init(Application.Context);
         }
 
+        public void Initialize(string configurationString)
+        {
+            Com.Everlytic.Android.EverlyticPush.Init(Application.Context, configurationString);
+        }
+
         public void Subscribe(string email)
         {
             Com.Everlytic.Android.EverlyticPush.Subscribe(email);

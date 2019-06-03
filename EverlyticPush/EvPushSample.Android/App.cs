@@ -17,8 +17,8 @@ namespace EvPushSample.Android
             base.OnCreate();
 
             Everlytic.Instance
-                .SetTestMode(true)
-                .Initialize();
+                .SetTestMode(false)
+                .Initialize("cD0zNjhhOGJmZS0yZjA1LTRmNjMtYjY3OS0yOWJhOTAyY2FmOWM7aT1odHRwOi8vcWEuZXZlcmx5dGljLm5ldA==");
         }
     }
 }

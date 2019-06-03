@@ -11,6 +11,11 @@ namespace Com.EverlyticPush
             throw new NotImplementedException();
         }
 
+        public void Initialize(string configurationString)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Subscribe(string email)
         {
             throw new NotImplementedException();

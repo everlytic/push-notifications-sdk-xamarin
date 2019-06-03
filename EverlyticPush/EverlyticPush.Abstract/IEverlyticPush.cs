@@ -7,6 +7,7 @@ namespace Com.EverlyticPush.Abstract
     {
         IEverlyticPush SetTestMode(bool mode);
         void Initialize();
+        void Initialize(string configurationString);
         void Subscribe(string email);
         void Subscribe(string email, OnResultReceivedDelegate onResultReceivedDelegateDelegate);
         void Unsubscribe();
