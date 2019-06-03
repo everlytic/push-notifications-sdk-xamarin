@@ -5,9 +5,12 @@ All methods are accessible on the `EverlyticPush.EverlyticPush.Current` object. 
 All methods are available on the `Everlytic.Instance` static class
 
 ```c#
-void Initialize()
+void Initialize();
+void Initialize(string configurationString);
 ```
 Initializes the SDK in the application. Must be called before any other SDK Methods are called.
+
+`configurationString` is optionally passed as an alternative to setting the SDK Configuration string in your `AndroidManifest.xml` file.
 ****
 ```c#
 void Subscribe(string email);
@@ -45,6 +48,8 @@ Add the following to your `AndroidManifest.xml` file inside the `<application>` 
   <meta-data android:name="com.everlytic.api.SDK_CONFIGURATION" android:value="{config}"></meta-data>
 </application>
 ```
+
+Alternatively, pass your SDK Configuration string in as a parameter to the `Everlytic.Instance.Initialize` method.
 
 Change the default icon by adding a new drawable called `ic_ev_notification_small`
 Notification color is derived from the `styles.xml` `colorPrimary` value

@@ -1,5 +1,10 @@
 # Change Log
 
+## `0.0.5-alpha`
+- Add `Everlytic.Instance.Initialize(configString)` to initialize the SDK with a config string programatically
+- Internal changes to improce communication with API
+- Changed config string to no longer include API strings key
+
 ## `0.0.4-alpha`
 - Android 
     - Custom Actions and Parameters

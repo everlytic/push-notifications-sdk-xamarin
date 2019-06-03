@@ -36,13 +36,10 @@ public class App : Application
 
         MainPage = new MainPage();
         
-        // Initialize the Everlytic SDK
-        Everlytic.Instance.Initialize();
-        
-        // Initialize the Everlytic SDK with Testing mode enabled
+        // Initialize the Everlytic with a configuration string
         Everlytic.Instance
-            .SetTestMode(true)
-            .Initialize();
+            .SetTestMode(true) // optional. Default is false
+            .Initialize("cD0zNTNmMDg5OS0yY2JiLTQyZTUtYTUyMi04YjgxNzY4ZGQ4NGE7aT1odHRwOi8vbXkudXJsLmNvbQ==");
     }
 }
 
@@ -64,14 +61,14 @@ public class App : Application
     public override void OnCreate()
     {
         base.OnCreate();
-
-        // Initialize the Everlytic SDK
-        Everlytic.Instance.Initialize();
             
-        // Initialize the Everlytic SDK with Testing mode enabled
+        // Initialize the Everlytic SDK with a configuration string
         Everlytic.Instance
-            .SetTestMode(true)
-            .Initialize();
+            .SetTestMode(true) // optional. Default is false
+            .Initialize("cD0zNTNmMDg5OS0yY2JiLTQyZTUtYTUyMi04YjgxNzY4ZGQ4NGE7aT1odHRwOi8vbXkudXJsLmNvbQ==");
+            
+        // Initialize the Everlytic SDK using AndroidManifest.xml configuration string
+        Everlytic.Instance.Initialize();
     }
 }
 ```
