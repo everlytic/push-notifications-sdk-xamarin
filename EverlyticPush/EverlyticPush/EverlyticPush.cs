@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using Com.EverlyticPush.Abstract;
 
 namespace Com.EverlyticPush
@@ -19,7 +20,12 @@ namespace Com.EverlyticPush
 
         private static IEverlyticPush CreateInstance()
         {
+#if PORTABLE
+            Debug.WriteLine("PORTABLE Reached");
+            return null;
+#else
             return new EverlyticPushImplementation();
+#endif
         }
 
         internal static NotImplementedException NotImplementedInAssemblyException()

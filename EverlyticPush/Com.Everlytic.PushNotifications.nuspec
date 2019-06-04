@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>Com.Everlytic.PushNotifications</id>
-        <version>0.0.5-alpha</version>
+        <version>0.0.6-alpha</version>
         <title>Everlytic Push Notification SDK for Xamarin</title>
         <authors>Everlytic, Jason Dantuma</authors>
         <owners>Everlytic</owners>
@@ -46,10 +46,10 @@
     </metadata>
     <files>
         <!--Core-->
-        <file src="EverlyticPush\bin\Release\EverlyticPush.pdb" target="lib\netstandard1.0"/>
-        <file src="EverlyticPush\bin\Release\EverlyticPush.dll" target="lib\netstandard1.0"/>
-        <file src="EverlyticPush.Abstract\bin\Release\EverlyticPush.Abstract.pdb" target="lib\netstandard1.0"/>
-        <file src="EverlyticPush.Abstract\bin\Release\EverlyticPush.Abstract.dll" target="lib\netstandard1.0"/>
+        <file src="EverlyticPush\bin\Release\netstandard1.0\EverlyticPush.pdb" target="lib\netstandard1.0"/>
+        <file src="EverlyticPush\bin\Release\netstandard1.0\EverlyticPush.dll" target="lib\netstandard1.0"/>
+        <file src="EverlyticPush.Abstract\bin\Release\netstandard1.0\EverlyticPush.Abstract.pdb" target="lib\netstandard1.0"/>
+        <file src="EverlyticPush.Abstract\bin\Release\netstandard1.0\EverlyticPush.Abstract.dll" target="lib\netstandard1.0"/>
 
         <!--Xamarin.Android-->
         <file src="EverlyticPush.Android\bin\Release\*EverlyticPush.*" target="lib\MonoAndroid10"/>

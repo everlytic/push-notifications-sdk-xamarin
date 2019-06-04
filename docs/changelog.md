@@ -1,5 +1,10 @@
 # Change Log
 
+## `0.0.6-alpha` 
+- Android
+    - Resolve an issue initializing the SDK
+    - Improved error reporting and debug logs
+
 ## `0.0.5-alpha`
 - Add `Everlytic.Instance.Initialize(configString)` to initialize the SDK with a config string programatically
 - Internal changes to improce communication with API

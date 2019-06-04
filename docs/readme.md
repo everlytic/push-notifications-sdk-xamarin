@@ -16,9 +16,11 @@
       <meta-data android:name="com.everlytic.api.SDK_CONFIGURATION" android:value="{config}"></meta-data>
     </application>
     ```
-    _Your SDK Configuration string can obtained from your Push Projects page in Everlytic_
-- [Add your Firebase `google-services.json` file in your project](https://firebase.google.com/docs/android/setup?authuser=0#add-config-file)
 
+    - Alternatively, you can pass the configuration string as a parameter to the SDK initialization method (see below).
+
+    _Your SDK Configuration string can obtained from your Push Projects page in Everlytic_
+- [Add your Firebase `google-services.json` file in your project](https://firebase.google.com/docs/android/setup?authuser=0#add-config-file). You may need to add the `Xamarin.GooglePlayServices.Base` NuGet package to fully configure your `google-services.json` file.
 
 ## Initialize the SDK in your top level Application class
 
