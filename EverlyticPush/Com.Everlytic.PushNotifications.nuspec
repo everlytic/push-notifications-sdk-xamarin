@@ -6,7 +6,7 @@
         <title>Everlytic Push Notification SDK for Xamarin</title>
         <authors>Everlytic</authors>
         <owners>Everlytic</owners>
-        <licenseUrl>https://github.com/everlytic/push-notifications-sdk-xamarin/blob/master/LICENSE</licenseUrl>
+        <license type="expression">MPL-2.0</license>
         <projectUrl>https://everlytic.github.io/push-notifications-sdk-xamarin/</projectUrl>
         <iconUrl>https://secure.gravatar.com/avatar/8cc4b70c001cb840097f9299f0207328</iconUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
