@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using System;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Com.EverlyticPush.Abstract
 {
@@ -6,6 +7,8 @@ namespace Com.EverlyticPush.Abstract
     public interface IEverlyticPush
     {
         IEverlyticPush SetTestMode(bool mode);
+        IEverlyticPush SetLogLevel(int level);
+        [Obsolete("Initialize with no parameters has been deprecated. Please pass in your project config string as a parameter")]
         void Initialize();
         void Initialize(string configurationString);
         void Subscribe(string email);
@@ -15,5 +18,6 @@ namespace Com.EverlyticPush.Abstract
         bool IsContactSubscribed();
         bool IsInitialized();
         void GetNotificationHistory(OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate);
+        //void GetNotificationHistoryCount(OnNotificationHistoryCountReceivedDelegate onNotificationHistoryCountReceivedDelegate);
     }
 }

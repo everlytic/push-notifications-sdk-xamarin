@@ -68,6 +68,12 @@ namespace Com.EverlyticPush
             Com.Everlytic.Android.EverlyticPush.SetInTestMode(mode);
             return this;
         }
+
+        public IEverlyticPush SetLogLevel(int level)
+        {
+            Com.Everlytic.Android.EverlyticPush.SetLogLevel(level);
+            return this;
+        }
     }
 
     internal class ResultReceiver : Object, IOnResultReceiver
@@ -121,8 +127,10 @@ namespace Com.EverlyticPush
             _delegate.Invoke(results);
         }
 
-        private static DateTime FromJavaDate(Date date)
+        private static DateTime? FromJavaDate(Date date)
         {
+            if (date == null) return null;
+
             return DateTimeOffset.FromUnixTimeMilliseconds(date.Time).Date;
         }
     }
