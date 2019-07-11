@@ -8,53 +8,62 @@ namespace Com.EverlyticPush
     {
         public void Initialize()
         {
-            throw new NotImplementedException();
+            PrintNotImplementedMessage();
         }
 
         public void Initialize(string configurationString)
         {
-            throw new NotImplementedException();
+            PrintNotImplementedMessage();
         }
 
         public void Subscribe(string email)
         {
-            throw new NotImplementedException();
+            PrintNotImplementedMessage();
         }
 
         public void Subscribe(string email, OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
-            throw new NotImplementedException();
+            PrintNotImplementedMessage();
         }
 
         public void Unsubscribe()
         {
-            throw new NotImplementedException();
+            PrintNotImplementedMessage();
         }
 
         public void Unsubscribe(OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
-            throw new NotImplementedException();
+            PrintNotImplementedMessage();
         }
 
         public bool IsContactSubscribed()
         {
-            throw new NotImplementedException();
+            PrintNotImplementedMessage();
+            return false;
         }
 
         public bool IsInitialized()
         {
-            throw new NotImplementedException();
+            PrintNotImplementedMessage();
+            return false;
         }
 
         public void GetNotificationHistory(
             OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate)
         {
-            throw new NotImplementedException();
+            PrintNotImplementedMessage();
         }
 
         public IEverlyticPush SetTestMode(bool mode)
         {
-            throw new NotImplementedException();
+            PrintNotImplementedMessage();
+            return this;
+        }
+
+        private void PrintNotImplementedMessage()
+        {
+            Console.WriteLine("[EVERLYTIC PUSH IOS] METHOD NOT IMPLEMENTED. SEE STACK TRACE BELOW");
+            Console.WriteLine(new Exception().StackTrace);
         }
     }
 }

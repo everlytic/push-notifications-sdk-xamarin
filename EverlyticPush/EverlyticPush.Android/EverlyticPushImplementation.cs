@@ -69,11 +69,11 @@ namespace Com.EverlyticPush
             return this;
         }
 
-        public IEverlyticPush SetLogLevel(int level)
-        {
-            Com.Everlytic.Android.EverlyticPush.SetLogLevel(level);
-            return this;
-        }
+        //public IEverlyticPush SetLogLevel(int level)
+        //{
+        //    Com.Everlytic.Android.EverlyticPush.SetLogLevel(level);
+        //    return this;
+        //}
     }
 
     internal class ResultReceiver : Object, IOnResultReceiver

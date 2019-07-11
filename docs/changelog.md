@@ -1,5 +1,18 @@
 # Change Log
 
+## `0.0.9-alpha`
+- iOS 
+    - No longer throw a `NotImplementedException` for the dummy wrapper methods
+        - A message is now logged to the console
+
+## `0.0.8-alpha`
+- Android
+    - Resolve a null exception when retrieving the notification history
+
+## `0.0.7-alpha`
+- Android
+    - Change Firebase dependency version to stable Xamarin.Firebase releases
+
 ## `0.0.6-alpha` 
 - Android
     - Resolve an issue initializing the SDK

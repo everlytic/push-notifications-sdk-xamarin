@@ -7,7 +7,7 @@ namespace Com.EverlyticPush.Abstract
     public interface IEverlyticPush
     {
         IEverlyticPush SetTestMode(bool mode);
-        IEverlyticPush SetLogLevel(int level);
+        //IEverlyticPush SetLogLevel(int level);
         [Obsolete("Initialize with no parameters has been deprecated. Please pass in your project config string as a parameter")]
         void Initialize();
         void Initialize(string configurationString);

@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using Com.EverlyticPush;
 
 namespace Blank
 {
@@ -20,6 +21,8 @@ namespace Blank
 
             // make the window visible
             Window.MakeKeyAndVisible();
+
+            Everlytic.Instance.Initialize("fdjsiopafjdsaoijigoads");
 
             return true;
         }

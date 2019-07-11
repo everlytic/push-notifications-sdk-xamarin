@@ -81,5 +81,19 @@
     <ItemGroup>
         <Folder Include="Resources\" />
     </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\EverlyticPush\EverlyticPush.csproj">
+        <Project>{8BC1EF09-34E7-4587-B00D-9BE1FA2ADE41}</Project>
+        <Name>EverlyticPush</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\EverlyticPush.Abstract\EverlyticPush.Abstract.csproj">
+        <Project>{5A6FDE11-E5BE-46D8-8F85-B00FF089CA3E}</Project>
+        <Name>EverlyticPush.Abstract</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\EverlyticPush.iOS\EverlyticPush.iOS.csproj">
+        <Project>{1F5AC7D1-8D0D-472D-BC45-75805262771D}</Project>
+        <Name>EverlyticPush.iOS</Name>
+      </ProjectReference>
+    </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
