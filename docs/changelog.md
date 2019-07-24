@@ -1,5 +1,11 @@
 # Change Log
 
+## `0.0.10-alpha`
+- Android
+    - Add `GetNotificationHistoryCount()` method
+    - Add `EverlyticNotification#CustomAttributes` property
+    - Fixed Java to C# DateTime object conversion setting time to 00:00
+
 ## `0.0.9-alpha`
 - iOS 
     - No longer throw a `NotImplementedException` for the dummy wrapper methods
