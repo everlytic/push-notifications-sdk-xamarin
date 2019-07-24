@@ -54,6 +54,12 @@ namespace Com.EverlyticPush
             PrintNotImplementedMessage();
         }
 
+        public int GetNotificationHistoryCount()
+        {
+            PrintNotImplementedMessage();
+            return 0;
+        }
+
         public IEverlyticPush SetTestMode(bool mode)
         {
             PrintNotImplementedMessage();

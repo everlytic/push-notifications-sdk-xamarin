@@ -18,6 +18,6 @@ namespace Com.EverlyticPush.Abstract
         bool IsContactSubscribed();
         bool IsInitialized();
         void GetNotificationHistory(OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate);
-        //void GetNotificationHistoryCount(OnNotificationHistoryCountReceivedDelegate onNotificationHistoryCountReceivedDelegate);
+        int GetNotificationHistoryCount();
     }
 }

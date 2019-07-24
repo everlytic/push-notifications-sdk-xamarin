@@ -11,6 +11,6 @@ namespace Com.EverlyticPush.Abstract
         public long MessageId;
         public DateTime? ReadAt;
         public DateTime? ReceivedAt;
-        //public Dictionary<string, string> CustomAttributes;
+        public IDictionary<string, string> CustomAttributes;
     }
 }

@@ -63,6 +63,11 @@ namespace Com.EverlyticPush
             Com.Everlytic.Android.EverlyticPush.GetNotificationHistory(historyReceiver);
         }
 
+        public int GetNotificationHistoryCount()
+        {
+            return Com.Everlytic.Android.EverlyticPush.NotificationHistoryCount;
+        }
+
         public IEverlyticPush SetTestMode(bool mode)
         {
             Com.Everlytic.Android.EverlyticPush.SetInTestMode(mode);
@@ -92,7 +97,7 @@ namespace Com.EverlyticPush
 
         public void OnResult(AndroidEvResult evResult)
         {
-            var abstractEvResult = new EvResult {IsSuccessful = evResult.IsSuccessful, Exception = evResult.Exception};
+            var abstractEvResult = new EvResult { IsSuccessful = evResult.IsSuccessful, Exception = evResult.Exception };
 
 
             _delegate.Invoke(abstractEvResult);
@@ -121,7 +126,8 @@ namespace Com.EverlyticPush
                 Body = notification.Body,
                 ReceivedAt = FromJavaDate(notification.Received_at),
                 ReadAt = FromJavaDate(notification.Read_at),
-                DismissedAt = FromJavaDate(notification.Dismissed_at)
+                DismissedAt = FromJavaDate(notification.Dismissed_at),
+                CustomAttributes = notification.Custom_attributes
             }).ToList();
 
             _delegate.Invoke(results);
@@ -131,7 +137,7 @@ namespace Com.EverlyticPush
         {
             if (date == null) return null;
 
-            return DateTimeOffset.FromUnixTimeMilliseconds(date.Time).Date;
+            return DateTimeOffset.FromUnixTimeMilliseconds(date.Time).LocalDateTime;
         }
     }
 }
