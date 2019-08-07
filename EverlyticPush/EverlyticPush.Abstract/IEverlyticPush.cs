@@ -10,7 +10,9 @@ namespace Com.EverlyticPush.Abstract
         //IEverlyticPush SetLogLevel(int level);
         [Obsolete("Initialize with no parameters has been deprecated. Please pass in your project config string as a parameter")]
         void Initialize();
+        IEverlyticPush SetIOSAutoRequestPermissions(bool autoRequest);
         void Initialize(string configurationString);
+        void PromptForNotificationPermissions(OnResultReceivedDelegate onResultReceivedDelegate);
         void Subscribe(string email);
         void Subscribe(string email, OnResultReceivedDelegate onResultReceivedDelegateDelegate);
         void Unsubscribe();

@@ -6,6 +6,9 @@ namespace Com.EverlyticPush
 {
     public class EverlyticPushImplementation : IEverlyticPush
     {
+
+        private bool AutoPromptForPermission;
+
         public void Initialize()
         {
             PrintNotImplementedMessage();
@@ -13,17 +16,32 @@ namespace Com.EverlyticPush
 
         public void Initialize(string configurationString)
         {
-            PrintNotImplementedMessage();
+            iOS.EverlyticPush.InitializeWithPushConfig(configurationString);
+
+            if (AutoPromptForPermission)
+            {
+                this.PromptForNotificationPermissions(null);
+            }
         }
 
         public void Subscribe(string email)
         {
-            PrintNotImplementedMessage();
+            iOS.EverlyticPush.SubscribeUserWithEmail(email, null);
         }
 
         public void Subscribe(string email, OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
-            PrintNotImplementedMessage();
+            iOS.EverlyticPush.SubscribeUserWithEmail(email, (success, error) =>
+            {
+                var result = new EvResult
+                {
+                    IsSuccessful = success
+                };
+
+                result.Exception = error != null ? new Exception(error.Description) : null;
+
+                onResultReceivedDelegateDelegate(result);
+            });
         }
 
         public void Unsubscribe()
@@ -60,16 +78,30 @@ namespace Com.EverlyticPush
             return 0;
         }
 
-        public IEverlyticPush SetTestMode(bool mode)
-        {
-            PrintNotImplementedMessage();
-            return this;
-        }
-
         private void PrintNotImplementedMessage()
         {
             Console.WriteLine("[EVERLYTIC PUSH IOS] METHOD NOT IMPLEMENTED. SEE STACK TRACE BELOW");
             Console.WriteLine(new Exception().StackTrace);
+        }
+
+        public IEverlyticPush SetTestMode(bool mode)
+        {
+            // Not implemented in iOS SDK
+            return this;
+        }
+
+        public IEverlyticPush SetIOSAutoRequestPermissions(bool autoRequest)
+        {
+            AutoPromptForPermission = true;
+            return this;
+        }
+
+        public void PromptForNotificationPermissions(OnResultReceivedDelegate onResultReceivedDelegate)
+        {
+            iOS.EverlyticPush.PromptForNotificationPermissionWithUserResponse((granted) =>
+            {
+                onResultReceivedDelegate?.Invoke(new EvResult { IsSuccessful = granted });
+            });
         }
     }
 }

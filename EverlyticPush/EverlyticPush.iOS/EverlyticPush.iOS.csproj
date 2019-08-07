@@ -8,7 +8,7 @@
         <ProjectGuid>{1F5AC7D1-8D0D-472D-BC45-75805262771D}</ProjectGuid>
         <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
         <OutputType>Library</OutputType>
-        <RootNamespace>EverlyticPush</RootNamespace>
+        <RootNamespace>Com.EverlyticPush.iOS</RootNamespace>
         <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
         <AssemblyName>EverlyticPush</AssemblyName>
     </PropertyGroup>
@@ -50,6 +50,10 @@
       <ProjectReference Include="..\EverlyticPush.Abstract\EverlyticPush.Abstract.csproj">
         <Project>{5a6fde11-e5be-46d8-8f85-b00ff089ca3e}</Project>
         <Name>EverlyticPush.Abstract</Name>
+      </ProjectReference>
+      <ProjectReference Include="..\EverlyticPush.iOS.Bindings\EverlyticPush.iOS.Bindings.csproj">
+        <Project>{DB1CCA55-3906-46EC-B86B-875F272D5684}</Project>
+        <Name>EverlyticPush.iOS.Bindings</Name>
       </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

@@ -1,0 +1,6 @@
+framework module EverlyticPush {
+  umbrella header "EverlyticPush.h"
+
+  export *
+  module * { export * }
+}

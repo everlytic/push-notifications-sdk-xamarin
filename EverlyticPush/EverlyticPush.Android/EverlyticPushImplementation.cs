@@ -74,6 +74,17 @@ namespace Com.EverlyticPush
             return this;
         }
 
+        public IEverlyticPush SetIOSAutoRequestPermissions(bool autoRequest)
+        {
+            // Not implemented in Android SDK
+            return this;
+        }
+
+        public void PromptForNotificationPermissions(OnResultReceivedDelegate onResultReceivedDelegate)
+        {
+            // Not implemented in Android SDK
+        }
+
         //public IEverlyticPush SetLogLevel(int level)
         //{
         //    Com.Everlytic.Android.EverlyticPush.SetLogLevel(level);
