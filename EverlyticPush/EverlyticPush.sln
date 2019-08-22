@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverlyticPush.iOS", "Everly
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EverlyticPush.iOS.Bindings", "EverlyticPush.iOS.Bindings\EverlyticPush.iOS.Bindings.csproj", "{DB1CCA55-3906-46EC-B86B-875F272D5684}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{7A1681AD-0809-49EC-903F-0DA34A3515DD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +87,16 @@ Global
 		{1F5AC7D1-8D0D-472D-BC45-75805262771D}.Release|iPhone.Build.0 = Release|Any CPU
 		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Release|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Release|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Release|iPhone.ActiveCfg = Debug|Any CPU
+		{DB1CCA55-3906-46EC-B86B-875F272D5684}.Release|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 	EndGlobalSection

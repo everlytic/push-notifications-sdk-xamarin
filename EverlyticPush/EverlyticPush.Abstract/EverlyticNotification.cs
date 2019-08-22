@@ -12,5 +12,10 @@ namespace Com.EverlyticPush.Abstract
         public DateTime? ReadAt;
         public DateTime? ReceivedAt;
         public IDictionary<string, string> CustomAttributes;
+
+        public static explicit operator EverlyticNotification(IntPtr v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

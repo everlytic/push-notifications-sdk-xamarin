@@ -1,8 +1,8 @@
 ﻿using System;
 
-using ObjCRuntime;
 using Foundation;
 using UIKit;
+using UserNotifications;
 
 namespace Com.EverlyticPush.iOS
 {
@@ -64,6 +64,8 @@ namespace Com.EverlyticPush.iOS
     //
 
     delegate void EVESubscribeCallback(bool isSuccessful, NSError error);
+    delegate void EVEUnsubscribeCallback(bool isSuccessful, NSError error);
+    delegate void EVENotificationHistoryCallback(NSArray notifications);
     delegate void EVEPermissionPromptCallback(bool granted);
 
     [BaseType(typeof(NSObject))]
@@ -80,6 +82,59 @@ namespace Com.EverlyticPush.iOS
         [Static]
         [Export("subscribeUserWithEmail:completionHandler:")]
         void SubscribeUserWithEmail(string email, EVESubscribeCallback callback);
+
+        [Static]
+        [Export("subscribeUserWithUniqueId:emailAddress:completionHandler:")]
+        void SubscribeUserWithUniqueIdAndEmail(string uniqueId, String email, EVESubscribeCallback callback);
+
+        [Static]
+        [Export("unsubscribeUserWithCompletionHandler:")]
+        void UnsubscribeUserWithCompletionHandler(EVEUnsubscribeCallback callback);
+
+        [Static]
+        [Export("notificationHistoryWithCompletionListener:")]
+        void NotificationHistoryWithCompletionListener(EVENotificationHistoryCallback callback);
+
+        [Static]
+        [Export("notificationHistoryCount")]
+        IntPtr NotificationHistoryCount();
+    }
+
+    [BaseType(typeof(NSObject))]
+    public interface EverlyticNotificationServiceExtensionHandler
+    {
+        [Static]
+        [Export("didReceiveNotificationRequest:withMutableNotificationContent:")]
+        void DidReceiveNotificationRequestWithMutableNotificationContent(UNNotificationRequest request, UNMutableNotificationContent mutableContent);
+
+        [Static]
+        [Export("serviceExtensionTimeWillExpireWithRequest:withMutableNotificationContent:")]
+        void ServiceExtensionTimeWillExpireWithRequestWithMutableNotificationContent(UNNotificationRequest request, UNMutableNotificationContent mutableContent);
+    }
+
+    [BaseType(typeof(NSObject))]
+    public interface EverlyticNotification
+    {
+        [Export("messageId")]
+        NSNumber MessageId { get; set; }
+
+        [Export("title")]
+        NSString Title { get; set; }
+
+        [Export("body")]
+        NSString Body { get; set; }
+
+        [Export("receivedAt")]
+        NSDate ReceivedAt { get; set; }
+
+        [Export("readAt")]
+        NSDate ReadAt { get; set; }
+
+        [Export("dismissedAt")]
+        NSDate DismissedAt { get; set; }
+
+        [Export("customAttributes")]
+        NSDictionary<NSString, NSString> CustomAttributes { get; set; }
     }
 
 }

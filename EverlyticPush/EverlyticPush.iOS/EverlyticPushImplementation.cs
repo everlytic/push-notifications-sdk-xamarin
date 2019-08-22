@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Com.EverlyticPush.Abstract;
 using Foundation;
 
@@ -16,6 +17,7 @@ namespace Com.EverlyticPush
 
         public void Initialize(string configurationString)
         {
+            Console.WriteLine("Initialize()");
             iOS.EverlyticPush.InitializeWithPushConfig(configurationString);
 
             if (AutoPromptForPermission)
@@ -31,6 +33,7 @@ namespace Com.EverlyticPush
 
         public void Subscribe(string email, OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
+            Console.WriteLine("Subscribe()");
             iOS.EverlyticPush.SubscribeUserWithEmail(email, (success, error) =>
             {
                 var result = new EvResult
@@ -40,18 +43,34 @@ namespace Com.EverlyticPush
 
                 result.Exception = error != null ? new Exception(error.Description) : null;
 
-                onResultReceivedDelegateDelegate(result);
+                if (onResultReceivedDelegateDelegate != null)
+                {
+                    onResultReceivedDelegateDelegate(result);
+                }
             });
         }
 
         public void Unsubscribe()
         {
-            PrintNotImplementedMessage();
+            Unsubscribe(null);
         }
 
         public void Unsubscribe(OnResultReceivedDelegate onResultReceivedDelegateDelegate)
         {
-            PrintNotImplementedMessage();
+            iOS.EverlyticPush.UnsubscribeUserWithCompletionHandler((success, error) =>
+            {
+
+                var result = new EvResult
+                {
+                    IsSuccessful = success
+                };
+
+                result.Exception = error != null ? new Exception(error.Description) : null;
+                if (onResultReceivedDelegateDelegate != null)
+                {
+                    onResultReceivedDelegateDelegate(result);
+                }
+            });
         }
 
         public bool IsContactSubscribed()
@@ -69,13 +88,16 @@ namespace Com.EverlyticPush
         public void GetNotificationHistory(
             OnNotificationHistoryResultsDelegate onNotificationHistoryResultsDelegateDelegate)
         {
-            PrintNotImplementedMessage();
+            iOS.EverlyticPush.NotificationHistoryWithCompletionListener((notifications) =>
+            {
+                var handler = new NotificationHistoryReceiver(onNotificationHistoryResultsDelegateDelegate);
+                handler.OnResult(notifications);
+            });
         }
 
         public int GetNotificationHistoryCount()
         {
-            PrintNotImplementedMessage();
-            return 0;
+            return ObjCRuntime.Runtime.GetINativeObject<NSNumber>(iOS.EverlyticPush.NotificationHistoryCount(), false).Int32Value;
         }
 
         private void PrintNotImplementedMessage()
@@ -102,6 +124,70 @@ namespace Com.EverlyticPush
             {
                 onResultReceivedDelegate?.Invoke(new EvResult { IsSuccessful = granted });
             });
+        }
+    }
+
+    internal class NotificationHistoryReceiver : Object
+    {
+        private readonly OnNotificationHistoryResultsDelegate _delegate;
+
+        public NotificationHistoryReceiver()
+        {
+        }
+
+        public NotificationHistoryReceiver(OnNotificationHistoryResultsDelegate _delegate)
+        {
+            this._delegate = _delegate;
+        }
+
+        public void OnResult(NSArray iosResults)
+        {
+            List<EverlyticNotification> list = new List<EverlyticNotification>();
+
+            Console.Out.WriteLine("iosResults count=" + iosResults.Count);
+            Console.Out.WriteLine(iosResults);
+
+            for (nuint i = 0; i < iosResults.Count; i++ )
+            {                
+                iOS.EverlyticNotification notification = ObjCRuntime.Runtime.GetINativeObject<iOS.EverlyticNotification>(iosResults.ValueAt(i), false);
+
+                Console.Out.WriteLine(notification.Title);
+                Console.Out.WriteLine(notification.Body);
+                Console.Out.WriteLine(notification.ReceivedAt);
+
+                EverlyticNotification nf = new EverlyticNotification
+                {
+                    MessageId = ((NSNumber)notification.MessageId).LongValue,
+                    Title = notification.Title,
+                    Body = notification.Body,
+                    ReceivedAt = FromFoundationDate(notification.ReceivedAt),
+                    ReadAt = FromFoundationDate(notification.ReadAt),
+                    DismissedAt = FromFoundationDate(notification.DismissedAt)
+                };
+
+                var ca = new Dictionary<string, string>();
+                var attributes = ((NSDictionary<NSString, NSString>)notification.CustomAttributes);
+
+                foreach (NSString key in attributes.Keys)
+                {
+                    ca.Add(key, (NSString) attributes.ValueForKey(key));
+                }
+
+                nf.CustomAttributes = ca;
+
+                list.Add(nf);
+
+            }
+
+            _delegate.Invoke(list);
+        }
+
+        private static DateTime? FromFoundationDate(NSDate date)
+        {
+            return null;
+            if (date == null) return null;
+            //NSDate.Now
+            //return DateTimeOffset.FromUnixTimeMilliseconds(date.).LocalDateTime;
         }
     }
 }
