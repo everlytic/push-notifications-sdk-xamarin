@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
     <metadata>
         <id>Com.Everlytic.PushNotifications</id>
-        <version>0.0.11-alpha</version>
+        <version>0.0.12-alpha</version>
         <title>Everlytic Push Notification SDK for Xamarin</title>
         <authors>Everlytic</authors>
         <owners>Everlytic</owners>
