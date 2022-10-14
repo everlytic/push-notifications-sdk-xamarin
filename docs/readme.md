@@ -1,1 +1,2 @@
-See the official documentation [here](https://everlytic.github.io/push-notifications-documentation/xamarin/readme.html)
+
+This SDK is no longer supported and is for historical reference only.
